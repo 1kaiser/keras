@@ -66,7 +66,7 @@ from keras import backend as K
 '''introducing memory saving '''
 from tensorflow.python.keras._impl.keras import backend as K
 import memory_saving_gradients
-K.__dict__["gradients"] = memory_saving_gradients.gradients_memory
+K.__dict__["gradients"] = memory_saving_gradients.gradients_speed
 '''introducing memory saving '''
 
 
