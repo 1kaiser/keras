@@ -60,6 +60,10 @@ import argparse
 from keras.applications import vgg19
 from keras import backend as K
 
+
+from tensorflow.python.keras._impl.keras import backend as K'''introducing memory saving '''
+K.__dict__["gradients"] = memory_saving_gradients.gradients_memory'''introducing memory saving '''
+
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
 parser.add_argument('base_image_path', metavar='base', type=str,
                     help='Path to the image to transform.')
