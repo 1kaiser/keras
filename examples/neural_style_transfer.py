@@ -48,7 +48,8 @@ keeping the generated image close enough to the original one.
 # References
     - [A Neural Algorithm of Artistic Style](http://arxiv.org/abs/1508.06576)
 '''
-from memory_saving_gradients import gradients'''introducing memory saving '''
+'''introducing memory saving '''
+from memory_saving_gradients import gradients 
 from __future__ import print_function
 from keras.preprocessing.image import load_img, img_to_array
 from scipy.misc import imsave
@@ -60,9 +61,11 @@ import argparse
 from keras.applications import vgg19
 from keras import backend as K
 
+'''introducing memory saving '''
+from tensorflow.python.keras._impl.keras import backend as K
+K.__dict__["gradients"] = memory_saving_gradients.gradients_memory
+'''introducing memory saving '''
 
-from tensorflow.python.keras._impl.keras import backend as K'''introducing memory saving '''
-K.__dict__["gradients"] = memory_saving_gradients.gradients_memory'''introducing memory saving '''
 
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
 parser.add_argument('base_image_path', metavar='base', type=str,
