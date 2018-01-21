@@ -61,6 +61,8 @@ import time
 import argparse
 
 from keras.applications import vgg19
+from keras.utils import plot_model
+
 from keras import backend as K
 
 '''introducing memory saving 
@@ -99,7 +101,7 @@ content_weight = args.content_weight
 
 # dimensions of the generated picture.
 width, height = load_img(base_image_path).size
-img_nrows = 1920
+img_nrows = 400
 img_ncols = int(width * img_nrows / height)
 
 # util function to open, resize and format pictures into appropriate tensors
@@ -149,7 +151,15 @@ input_tensor = K.concatenate([base_image,
 # the model will be loaded with pre-trained ImageNet weights
 model = vgg19.VGG19(input_tensor=input_tensor,
                     weights='imagenet', include_top=False)
-model.summary()
+'''model.summary()'''
+plot_model(
+    model,
+    to_file='model.png',
+    show_shapes=True,
+    show_layer_names=True,
+    rankdir='TB'
+)
+
 print('Model loaded.')
 
 # get the symbolic outputs of each "key" layer (we gave them unique names).
