@@ -153,13 +153,7 @@ input_tensor = K.concatenate([base_image,
 model = vgg19.VGG19(input_tensor=input_tensor,
                     weights='imagenet', include_top=False)
 '''model.summary()'''
-plot_model(
-    model,
-    to_file='model.png',
-    show_shapes=True,
-    show_layer_names=True,
-    rankdir='TB'
-)
+plot_model(model, to_file='model.png')
 
 print('Model loaded.')
 
