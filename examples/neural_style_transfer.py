@@ -149,6 +149,7 @@ input_tensor = K.concatenate([base_image,
 # the model will be loaded with pre-trained ImageNet weights
 model = vgg19.VGG19(input_tensor=input_tensor,
                     weights='imagenet', include_top=False)
+model.summary()
 print('Model loaded.')
 
 # get the symbolic outputs of each "key" layer (we gave them unique names).
