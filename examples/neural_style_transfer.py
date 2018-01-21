@@ -48,9 +48,11 @@ keeping the generated image close enough to the original one.
 # References
     - [A Neural Algorithm of Artistic Style](http://arxiv.org/abs/1508.06576)
 '''
+
+from __future__ import print_function
 '''introducing memory saving '''
 from memory_saving_gradients import gradients 
-from __future__ import print_function
+
 from keras.preprocessing.image import load_img, img_to_array
 from scipy.misc import imsave
 import numpy as np
