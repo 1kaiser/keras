@@ -50,9 +50,9 @@ keeping the generated image close enough to the original one.
 '''
 
 from __future__ import print_function
-'''introducing memory saving '''
+'''introducing memory saving 
 from memory_saving_gradients import gradients 
-
+'''
 from keras.preprocessing.image import load_img, img_to_array
 from scipy.misc import imsave
 import numpy as np
@@ -63,11 +63,11 @@ import argparse
 from keras.applications import vgg19
 from keras import backend as K
 
-'''introducing memory saving '''
+'''introducing memory saving 
 from tensorflow.python.keras._impl.keras import backend as K
 import memory_saving_gradients
 K.__dict__["gradients"] = memory_saving_gradients.gradients_speed
-'''introducing memory saving '''
+introducing memory saving '''
 
 
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
