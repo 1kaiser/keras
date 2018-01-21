@@ -62,7 +62,6 @@ import pydot
 import argparse
 
 from keras.applications import vgg19
-from keras.utils import plot_model
 
 from keras import backend as K
 
@@ -153,7 +152,6 @@ input_tensor = K.concatenate([base_image,
 model = vgg19.VGG19(input_tensor=input_tensor,
                     weights='imagenet', include_top=False)
 '''model.summary()'''
-plot_model(model, to_file='model.png')
 
 print('Model loaded.')
 
